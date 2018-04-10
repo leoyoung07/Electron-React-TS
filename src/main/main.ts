@@ -1,4 +1,6 @@
+import { resolve } from 'app-root-path';
 import { app, BrowserWindow } from 'electron';
+import isDev from 'electron-is-dev';
 import path from 'path';
 import url from 'url';
 
@@ -10,17 +12,23 @@ function createWindow() {
   // 创建浏览器窗口。
   win = new BrowserWindow({ width: 800, height: 600 });
 
+  const devUrl = url.format({
+    pathname: 'localhost:1124',
+    protocol: 'http:',
+    slashes: true
+  });
+  const prodUrl = url.format({
+    pathname: resolve('dist/renderer/production/index.html'),
+    protocol: 'file:',
+    slashes: true
+  });
+  const indexUrl = isDev ? devUrl : prodUrl;
+
   // 然后加载应用的 index.html。
-  win.loadURL(
-    url.format({
-      pathname: 'localhost:1124',
-      protocol: 'http:',
-      slashes: true
-    })
-  );
+  win.loadURL(indexUrl);
 
   // 打开开发者工具。
-  win.webContents.openDevTools();
+  // win.webContents.openDevTools();
 
   // 当 window 被关闭，这个事件会被触发。
   win.on('closed', () => {

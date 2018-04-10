@@ -1,5 +1,5 @@
 import { Application } from 'spectron';
-import getApp from './getapp';
+import getApp from './getApp';
 
 let app: Application;
 
@@ -12,9 +12,15 @@ afterEach(async () => {
 });
 beforeEach(async () => {
   app = getApp();
-  return await app.start();
+  await app.start();
+  await app.client.waitUntilWindowLoaded();
 });
 
-test('application count', async () => {
-  expect(await app.client.getWindowCount()).toBeGreaterThanOrEqual(1);
+describe('Main Test', async () => {
+  it('Application should have a title', async () => {
+    expect(await app.client.getTitle()).toBe('Electron-React-TS');
+  });
+  it('Root div should be visible', async () => {
+    expect(await app.client.isVisible('div#root')).toBe(true);
+  });
 });

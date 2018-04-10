@@ -40,6 +40,10 @@
   version "1.2.4"
   resolved "http://registry.npm.taobao.org/@types/app-root-path/download/@types/app-root-path-1.2.4.tgz#a78b703282b32ac54de768f5512ecc3569919dc7"
 
+"@types/electron-is-dev@^0.3.0":
+  version "0.3.0"
+  resolved "http://registry.npm.taobao.org/@types/electron-is-dev/download/@types/electron-is-dev-0.3.0.tgz#28dc6aa4c9493869a8c5da29ebd586648f5ffb70"
+
 "@types/jest@^22.2.2":
   version "22.2.2"
   resolved "http://registry.npm.taobao.org/@types/jest/download/@types/jest-22.2.2.tgz#afe5dacbd00d65325f52da0ed3e76e259629ac9d"
@@ -64,6 +68,12 @@
   resolved "http://registry.npm.taobao.org/@types/react/download/@types/react-16.3.5.tgz#bd3b21285602ea7cadb4b9e0d9711d96fd5692cc"
   dependencies:
     csstype "^2.0.0"
+
+"@types/webdriverio@^4.10.1":
+  version "4.10.1"
+  resolved "http://registry.npm.taobao.org/@types/webdriverio/download/@types/webdriverio-4.10.1.tgz#efa8ae7d4aab0952bfba1676feb0c0cf920a52bc"
+  dependencies:
+    "@types/node" "*"
 
 abab@^1.0.4:
   version "1.0.4"
@@ -2316,6 +2326,10 @@ electron-download@^4.1.0:
     rc "^1.1.2"
     semver "^5.3.0"
     sumchecker "^2.0.1"
+
+electron-is-dev@^0.3.0:
+  version "0.3.0"
+  resolved "http://registry.npm.taobao.org/electron-is-dev/download/electron-is-dev-0.3.0.tgz#14e6fda5c68e9e4ecbeff9ccf037cbd7c05c5afe"
 
 electron-osx-sign@0.4.10:
   version "0.4.10"
