@@ -3,7 +3,7 @@ import getApp from './getApp';
 
 let app: Application;
 
-jest.setTimeout(30000);
+jest.setTimeout(300000);
 
 afterEach(async () => {
   if (app && app.isRunning()) {
