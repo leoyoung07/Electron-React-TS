@@ -9,11 +9,15 @@
         "request": "launch",
         "name": "Electron Main",
         "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron",
-        "program": "${workspaceFolder}\\dist\\main\\main.js",
+        "program": "${workspaceFolder}/src/main/index.ts",
+        "outFiles": [
+          "${workspaceFolder}/dist/main/main.js",
+        ],
         "env": {
-          "ELECTRON_IS_DEV": "0"
+          "DEBUG": "1"
         },
-        "preLaunchTask": "npm: parcel:build"
+        "preLaunchTask": "npm: compile",
+        "sourceMaps": true
       }
     ]
 }
