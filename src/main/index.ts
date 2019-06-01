@@ -24,16 +24,16 @@ function createMainWindow() {
 
   let url: string;
   if (isDevelopment) {
-    url = `http://localhost:${process.env.ELECTRON_WEBPACK_WDS_PORT}`;
+    url = `http://localhost:${process.env.WEBPACK_DEV_SERVER_PORT}`;
   } else if (isDebug) {
     url = formatUrl({
-      pathname: path.resolve(__dirname, '..', 'renderer', 'index.html'),
+      pathname: path.resolve(__dirname, 'index.html'),
       protocol: 'file',
       slashes: true
     });
   } else {
     url = formatUrl({
-      pathname: path.join(__dirname, 'index.html'),
+      pathname: path.resolve(__dirname, 'index.html'),
       protocol: 'file',
       slashes: true
     });

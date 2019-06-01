@@ -8,11 +8,12 @@
         "type": "node",
         "request": "launch",
         "name": "Electron Main",
-        "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron",
-        "program": "${workspaceFolder}/src/main/index.ts",
-        "outFiles": [
-          "${workspaceFolder}/dist/main/main.js",
-        ],
+        "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron",
+        "windows": {
+          "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron.cmd"
+        },
+        "args" : ["."],
+        "outputCapture": "std",
         "env": {
           "DEBUG": "1"
         },
