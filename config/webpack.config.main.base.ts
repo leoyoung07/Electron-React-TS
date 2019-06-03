@@ -1,3 +1,4 @@
+import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import path from 'path';
 import webpack from 'webpack';
 
@@ -24,6 +25,9 @@ const mainBaseConfig: webpack.Configuration = {
   resolve: {
     extensions: ['.tsx', '.ts', '.js']
   },
+  plugins: [
+    new CleanWebpackPlugin()
+  ]
 };
 
 export default mainBaseConfig;
